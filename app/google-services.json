@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1072640218088",
+    "project_id": "ethonotes",
+    "storage_bucket": "ethonotes.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072640218088:android:70b1239f6dac523f680a5d",
+        "android_client_info": {
+          "package_name": "com.example.ethonotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCHQo6ebCUVnpUFIBCU5Bputd-cSDH1M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

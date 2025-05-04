@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class LoginViewModel : ViewModel(){
+class LoginViewModel() : ViewModel(){
 
     private val auth: FirebaseAuth = Firebase.auth
     var showAlert by mutableStateOf(false)

@@ -26,7 +26,9 @@ import com.example.ethonotes.ViewModes.LoginViewModel
 import com.example.ethonotes.ViewModes.NotesViewModel
 import com.example.ethonotes.Views.Login.LoginTabView
 import com.example.ethonotes.ui.theme.EthoNotesTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

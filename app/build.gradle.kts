@@ -3,7 +3,9 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 
+    id("org.jetbrains.kotlin.kapt")
     id("com.google.gms.google-services")
+
 }
 
 android {
@@ -43,6 +45,10 @@ android {
 }
 
 dependencies {
+
+    implementation("com.google.dagger:dagger:2.52")
+    implementation("com.google.dagger:hilt-android:2.52")
+    kapt("com.google.dagger:dagger-compiler:2.52")
     implementation(platform("androidx.compose:compose-bom:2024.04.01"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -64,10 +70,25 @@ dependencies {
     implementation ("androidx.compose.ui:ui:1.7.2")
     implementation ("androidx.compose.material:material:1.7.2")
     implementation ("androidx.compose.ui:ui-tooling-preview:1.7.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
     implementation("com.google.firebase:firebase-auth-ktx:23.2.0")
     implementation("com.google.firebase:firebase-firestore-ktx:25.1.3")
     implementation("com.google.firebase:firebase-analytics:22.4.0")
     //implementation("androidx.navigation:navigation-common:$nav_version")
 
+    implementation("io.insert-koin:koin-android:3.2.0-beta-1")
+    implementation ("io.insert-koin:koin-androidx-navigation:3.2.0-beta-1")
+    implementation ("io.insert-koin:koin-androidx-compose:3.2.0-beta-1")
+    testImplementation ("io.insert-koin:koin-test-junit4:3.2.0-beta-1")
+
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
+
+
+}
+kapt {
+    correctErrorTypes = true
 }

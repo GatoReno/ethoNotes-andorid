@@ -2,8 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
     id("com.google.gms.google-services")
+    kotlin("kapt")
 }
 
 android {
@@ -52,6 +52,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.support.annotations)
+    implementation(libs.support.v4)
+    implementation(libs.androidx.legacy.support.v13)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -68,6 +71,20 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx:23.2.0")
     implementation("com.google.firebase:firebase-firestore-ktx:25.1.3")
     implementation("com.google.firebase:firebase-analytics:22.4.0")
-    //implementation("androidx.navigation:navigation-common:$nav_version")
+    //implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+// Dagger core
+    implementation("com.google.dagger:dagger:2.48")
+    kapt("com.google.dagger:dagger-compiler:2.48")
 
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-compiler:2.48")
+
+    // Retrofit core
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    // (optional) Moshi converter if you’re using Moshi
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    // (optional) OkHttp logging interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
 }

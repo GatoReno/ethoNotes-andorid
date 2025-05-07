@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt.android)
     id("com.google.gms.google-services")
     kotlin("kapt")
 }
@@ -87,4 +88,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     // (optional) OkHttp logging interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
+}
+
+kapt {
+    correctErrorTypes = true
 }

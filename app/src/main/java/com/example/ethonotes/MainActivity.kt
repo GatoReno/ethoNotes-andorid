@@ -22,33 +22,41 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.example.ethonotes.Navigation.NavMaanger
+import com.example.ethonotes.ViewModes.Games.GamesViewModel
 import com.example.ethonotes.ViewModes.LoginViewModel
 import com.example.ethonotes.ViewModes.NotesViewModel
+import com.example.ethonotes.Views.Games.GamesHomeView
 import com.example.ethonotes.Views.Login.LoginTabView
 import com.example.ethonotes.ui.theme.EthoNotesTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val loginVM  : LoginViewModel by viewModels()
         val notesVM  : NotesViewModel by viewModels()
+        val gamesVM  : GamesViewModel by viewModels()
         enableEdgeToEdge()
         setContent {
 
             EthoNotesTheme {
-                val isDarkTheme = isSystemInDarkTheme()
-                val backgroundColor = if (isDarkTheme) Color.Black else Color.White
-                 Column(modifier = Modifier
-                     .fillMaxSize()
-                     .background(backgroundColor)
-                     .padding(WindowInsets.systemBars.asPaddingValues())) {
-                     NavMaanger(loginVM,notesVM)
-                 }
-
-
+                GamesHomeView(gamesVM)
             }
         }
     }
 }
+
+
+
+//                val isDarkTheme = isSystemInDarkTheme()
+//                val backgroundColor = if (isDarkTheme) Color.Black else Color.White
+//                 Column(modifier = Modifier
+//                     .fillMaxSize()
+//                     .background(backgroundColor)
+//                     .padding(WindowInsets.systemBars.asPaddingValues())) {
+//                     NavMaanger(loginVM,notesVM)
+//                }
 

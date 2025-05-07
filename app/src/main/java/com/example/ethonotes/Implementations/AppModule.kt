@@ -1,5 +1,6 @@
 package com.example.ethonotes.Implementations
 
+import com.example.ethonotes.Abstractions.IGameApi
 import com.example.ethonotes.Util.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -8,7 +9,6 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -23,4 +23,12 @@ object AppModule {
             .build()
 
     }
+
+    @Singleton
+    @Provides
+    fun providesApiGames(retrofit: Retrofit) : IGameApi{
+        return  retrofit.create(IGameApi::class.java)
+    }
+
+
 }

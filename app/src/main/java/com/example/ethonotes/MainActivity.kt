@@ -38,12 +38,12 @@ class MainActivity : ComponentActivity() {
 
         val loginVM  : LoginViewModel by viewModels()
         val notesVM  : NotesViewModel by viewModels()
-        val gamesVM  : GamesViewModel by viewModels()
-        enableEdgeToEdge()
+        val gVM : GamesViewModel by viewModels()
+         enableEdgeToEdge()
         setContent {
 
             EthoNotesTheme {
-                GamesHomeView(gamesVM)
+                GamesHomeView()
             }
         }
     }

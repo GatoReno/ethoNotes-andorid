@@ -63,31 +63,28 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    val nav_version = "2.7.5"
-    implementation("androidx.navigation:navigation-compose:$nav_version")
-    implementation ("androidx.compose.ui:ui:1.7.2")
-    implementation ("androidx.compose.material:material:1.7.2")
-    implementation ("androidx.compose.ui:ui-tooling-preview:1.7.2")
-    implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
-    implementation("com.google.firebase:firebase-auth-ktx:23.2.0")
-    implementation("com.google.firebase:firebase-firestore-ktx:25.1.3")
-    implementation("com.google.firebase:firebase-analytics:22.4.0")
-    //implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-// Dagger core
-    implementation("com.google.dagger:dagger:2.48")
-    kapt("com.google.dagger:dagger-compiler:2.48")
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
 
+    implementation (libs.ui)
+    implementation (libs.androidx.material)
+    implementation (libs.ui.tooling.preview)
+    //noinspection GradleDependency
+    implementation(libs.firebase.bom)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.analytics)
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-compiler:2.48")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     // Retrofit core
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
     // (optional) Moshi converter if you’re using Moshi
-    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation(libs.converter.moshi)
     // (optional) OkHttp logging interceptor
-    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
+    implementation(libs.logging.interceptor)
 }
 
 kapt {

@@ -34,6 +34,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.ethonotes.Components.Alert
 import com.example.ethonotes.ViewModes.LoginViewModel
@@ -41,7 +42,7 @@ import com.example.ethonotes.ViewModes.LoginViewModel
 
 @Preview
 @Composable
-fun LoginView(navController: NavController, loginVM: LoginViewModel) {
+fun LoginView(navController: NavController, loginVM: LoginViewModel = hiltViewModel<LoginViewModel>()) {
     Text(text = "LoginView",color= MaterialTheme.colorScheme.onBackground)
     Spacer(modifier = Modifier.height(20.dp))
     Column (horizontalAlignment = Alignment.CenterHorizontally,

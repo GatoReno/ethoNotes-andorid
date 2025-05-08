@@ -15,12 +15,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.ethonotes.ViewModes.LoginViewModel
 
 
 @Composable
-fun LoginTabView(navController: NavController, loginVM: LoginViewModel){
+fun LoginTabView(navController: NavController, loginVM: LoginViewModel = hiltViewModel<LoginViewModel>()){
 
 
     var selectedTab by remember { mutableStateOf(0) }
